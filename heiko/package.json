@@ -1,0 +1,7 @@
+{
+    "name": "heiko",
+    "version": "1.0.0",
+    "bin": {
+        "heiko": "index.js"
+    }
+}
