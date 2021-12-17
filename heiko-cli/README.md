@@ -8,4 +8,14 @@ Run the following command to enter my cv via the cli: <br>
 npx heiko-cli
 ```
 
-Or install it with `npm heiko-cli` and then simply run `heiko`. <br>
+Or install it with <br>
+
+```sh
+npm install heiko-cli
+```
+
+ and then simply run <br> 
+ 
+ ```sh
+ heiko
+```
