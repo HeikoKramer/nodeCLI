@@ -1,6 +1,6 @@
 {
     "name": "heiko-cli",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "Get to know Heiko via the CLI",
     "bin": {
         "heiko": "index.js"
@@ -14,5 +14,13 @@
         "krämer",
         "heiko kramer",
         "heikokramer"
-    ]
+    ],
+    "license": "UNLICENSED",
+    "main": "index.js",
+    "repository": "https://github.com/HeikoKramer/nodeCLI/tree/main/heiko-cli",
+    "author": {
+        "name": "Heiko Krämer",
+        "email": "cli@heikokraemer.de",
+        "url": "https://heikokraemer.de"
+    }
 }
