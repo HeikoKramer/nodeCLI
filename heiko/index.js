@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 const clearConsole = require('clear-any-console');
+const pkgJSON      = require('./package.json');
  
 // Clears the console.
 clearConsole();
 
+// Add a CLI Header
+console.log(`
+NAME: ${pkgJSON.name}
+VERSION: ${pkgJSON.version}
+DESCRIPTION: ${pkgJSON.description}
+`);
 
 console.log(`
 Heiko Krämer
