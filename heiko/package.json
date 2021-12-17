@@ -1,8 +1,11 @@
 {
     "name": "heiko-cli",
-    "version": "1.1.0",
-    "description": "Get to know Heiko via a CLI.",
+    "version": "1.2.0",
+    "description": "Get to know Heiko via the CLI",
     "bin": {
         "heiko": "index.js"
+    },
+    "dependencies": {
+        "cli-welcome": "^2.2.2"
     }
 }
