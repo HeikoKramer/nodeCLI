@@ -9,17 +9,17 @@ const chalk   = require('chalk');
 const log = console.log;
 
 // chalk variables
-header = chalk.hex('#6d1f56').bold;
-text   = chalk.hex('#48483E');
+const header = chalk.hex('#6d1f56').bold.inverse;
+const text   = chalk.hex('#48483E');
 
 // Colored Logos
-linkedIn   = chalk.bold.bgWhite.hex('#0A66C2')('Linked') 
-           + chalk.white.bold.bgHex('#0A66C2')('in');
-salesForce = chalk.white.bold.bgHex('#00A1E0')('sales') 
-           + chalk.white.bold.italic.bgHex('#00A1E0')('f') 
-           + chalk.white.bold.bgHex('#00A1E0')('orce');
-trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
-gitHub     = chalk.bgWhite.black.bold('GitHub');
+const linkedIn   = chalk.bold.bgWhite.hex('#0A66C2')('Linked') 
+                    + chalk.white.bold.bgHex('#0A66C2')('in');
+const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales') 
+                    + chalk.white.bold.italic.bgHex('#00A1E0')('f') 
+                    + chalk.white.bold.bgHex('#00A1E0')('orce');
+const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
+const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
 // Add a CLI Welcome
 welcome({
@@ -53,8 +53,8 @@ ${trailHead} ${chalk.dim.underline.blue(`https://trailblazer.me/id/hkrmer`)}
 // FUNCTIONS
 // Calculate my age
 function myAge () {
-    birthDate = new Date("10/09/1981");
-    thisDay   = new Date();
+    const birthDate = new Date("10/09/1981");
+    const thisDay   = new Date();
 
     const years = (thisDay.getFullYear() - birthDate.getFullYear()).toString();
 
@@ -63,8 +63,8 @@ function myAge () {
 
 // Calculate my years of work experience
 function workSince () {
-    startDate = new Date("08/01/1998");
-    thisDay   = new Date();
+    const startDate = new Date("08/01/1998");
+    const thisDay   = new Date();
 
     const years = (thisDay.getFullYear() - startDate.getFullYear()).toString();
 
