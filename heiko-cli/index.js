@@ -21,6 +21,12 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
+// Colored Alert
+const success = chalk.green.inverse;
+const info    = chalk.blue.inverse;
+const warning = chalk.keyword(`orange`).inverse;
+const error   = chalk.red.inverse;
+
 // Add a CLI Welcome
 welcome({
     title: `${pkgJSON.name}`,
