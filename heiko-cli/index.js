@@ -31,7 +31,7 @@ welcome({
 log(`
 ${chalk.hex('#6d1f56').bold('Heiko Krämer')}
 
-40 years old father (daughter, 7) with overall 23 years of professional work experience in diverse roles and fields. 
+${myAge()} years old father (daughter, 7) with overall 23 years of professional work experience in diverse roles and fields. 
 Focused on the telecommunications sector for the past nine years. Fast, continuous and motivated learner, emphatic listener and keen observer. 
 Just-do-it mentality. ${salesForce} enthusiast since 2012. Certified Admin, App Builder and Developer (PD1). 
 Strongly interested in process efficiency, simplification and automation.
@@ -43,3 +43,15 @@ Strongly interested in process efficiency, simplification and automation.
 🐻 ${trailHead} ${chalk.dim.underline.blue(`https://trailblazer.me/id/hkrmer`)}
 
 `);
+
+
+// FUNCTIONS
+// Calculate my age
+function myAge () {
+    birthDate = new Date("10/09/1981");
+    thisDay   = new Date();
+
+    const years = (thisDay.getFullYear() - birthDate.getFullYear()).toString();
+
+    return years;
+}
