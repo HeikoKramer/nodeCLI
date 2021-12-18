@@ -8,6 +8,10 @@ const chalk   = require('chalk');
 // Aliases
 const log = console.log;
 
+// chalk variables
+header = chalk.hex('#6d1f56').bold;
+text   = chalk.hex('#48483E');
+
 // Colored Logos
 linkedIn   = chalk.bold.bgWhite.hex('#0A66C2')('Linked') 
            + chalk.white.bold.bgHex('#0A66C2')('in');
@@ -29,13 +33,13 @@ welcome({
 });
 
 log(`
-${chalk.hex('#6d1f56').bold('Heiko Krämer')}
+${header('Heiko Krämer')}
 
-${chalk.hex('#48483E')(`${myAge()} years old father with overall ${workSince()} years of work experience in diverse roles and fields. 
+${text(`${myAge()} years old father with overall ${workSince()} years of work experience in diverse roles and fields. 
 Main focus areas were print-media (7 years) and telecommunications (9 years).
 Motivated learner, emphatic listener and keen observer. Just-do-it mentality.`)} 
 
-${salesForce} ${chalk.hex('#48483E').dim(`enthusiast since 2012. 
+${salesForce} ${text(`enthusiast since 2012. 
 Certified Admin, App Builder and Developer (PD1). 
 Strongly interested in process efficiency, simplification and automation.`)}
 
