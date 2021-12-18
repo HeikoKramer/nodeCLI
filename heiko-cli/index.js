@@ -21,11 +21,13 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
-// Colored Alert
-const success = chalk.green.inverse;
-const info    = chalk.blue.inverse;
-const warning = chalk.keyword(`orange`).inverse;
-const error   = chalk.red.inverse;
+// Colored Alerts
+const sym     = require('log-symbols');
+const success = sym.success + ' ' + chalk.green.bold('SUCCESS');
+const info    = sym.info + ' ' + chalk.blue.bold('INFO');
+const warning = sym.warning + ' ' + chalk.yellow.bold('WARNING');
+const error   = sym.error + ' ' + chalk.red.bold('ERROR');
+
 
 // Add a CLI Welcome
 welcome({
