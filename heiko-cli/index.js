@@ -4,6 +4,7 @@
 const welcome = require('cli-welcome');
 const pkgJSON = require('./package.json');
 const chalk   = require('chalk');
+const alert   = require('./alerts');
 
 // Aliases
 const log = console.log;
@@ -21,14 +22,6 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
-// Colored Alerts
-const sym     = require('log-symbols');
-const success = sym.success + ' ' + chalk.green.bold('SUCCESS');
-const info    = sym.info + ' ' + chalk.blue.bold('INFO');
-const warning = sym.warning + ' ' + chalk.yellow.bold('WARNING');
-const error   = sym.error + ' ' + chalk.red.bold('ERROR');
-
-
 // Add a CLI Welcome
 welcome({
     title: `${pkgJSON.name}`,
@@ -39,6 +32,26 @@ welcome({
     clear: true,
     version: `${pkgJSON.version}`
 });
+
+// alert({
+//     type: `success`,
+//     msg: `This is a Success Message :)`
+// });
+
+// alert({
+//     type: `info`,
+//     msg: `This is a Info Message.`
+// });
+
+// alert({
+//     type: `warning`,
+//     msg: `This is a Warning Message!`
+// });
+
+// alert({
+//     type: `error`,
+//     msg: `This is a Error Message :(`
+// });
 
 log(`
 ${header('Heiko Krämer')}
