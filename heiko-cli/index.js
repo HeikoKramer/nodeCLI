@@ -6,6 +6,7 @@ const pkgJSON   = require('./package.json');
 const chalk     = require('chalk');
 const alert     = require('./alerts');
 const checkNode = require('cli-check-node');
+const unhandled = require('cli-handle-unhandled');
 
 // Aliases
 const log = console.log;
@@ -23,6 +24,8 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
+unhandled();
+
 // Add a CLI Welcome
 welcome({
     title: `${pkgJSON.name}`,
@@ -36,24 +39,13 @@ welcome({
 
 checkNode('12');
 
+// Demo unhandled error
+// Promise.reject(new Error('This is unhandled'));
+
+// Demo alert
 // alert({
 //     type: `success`,
 //     msg: `This is a Success Message :)`
-// });
-
-// alert({
-//     type: `info`,
-//     msg: `This is a Info Message.`
-// });
-
-// alert({
-//     type: `warning`,
-//     msg: `This is a Warning Message!`
-// });
-
-// alert({
-//     type: `error`,
-//     msg: `This is a Error Message :(`
 // });
 
 log(`
