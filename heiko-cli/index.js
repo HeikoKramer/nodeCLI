@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 
 // Required packages and files
-const welcome = require('cli-welcome');
-const pkgJSON = require('./package.json');
-const chalk   = require('chalk');
-const alert   = require('./alerts');
+const welcome   = require('cli-welcome');
+const pkgJSON   = require('./package.json');
+const chalk     = require('chalk');
+const alert     = require('./alerts');
+const checkNode = require('cli-check-node');
 
 // Aliases
 const log = console.log;
@@ -32,6 +33,8 @@ welcome({
     clear: true,
     version: `${pkgJSON.version}`
 });
+
+checkNode('12');
 
 // alert({
 //     type: `success`,
