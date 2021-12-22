@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 // Required packages and files
-const chalk     = require('chalk');
-const alert     = require('./alerts');
-const init      = require('./utils/init');
+const chalk       = require('chalk');
+const alert       = require('./alerts');
+const init        = require('./utils/init');
+const handleError = require('cli-handle-error');
 
 // Aliases
 const log = console.log;
@@ -22,34 +23,28 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
-init();
+( async () => {
 
-// Demo unhandled error
-// Promise.reject(new Error('This is unhandled'));
+    init(); 
+    const { myAge, workSince } = require('./calctime');
 
-// Demo alert
-// alert({
-//     type: `success`,
-//     msg: `This is a Success Message :)`
-// });
+    // const err = new Error('Something went wrong');
+    // handleError('CUSTOM ERROR', err);
 
-(() => {
-const { myAge, workSince } = require('./calctime');
+    log(`
+    ${header('Heiko Krämer')}
 
-log(`
-${header('Heiko Krämer')}
+    ${text(`${myAge()} years old father with overall ${workSince()} years of work experience in diverse roles and fields. 
+    Main focus areas were print-media (7 years) and telecommunications (9 years).
+    Motivated learner, emphatic listener and keen observer. Just-do-it mentality.`)} 
 
-${text(`${myAge()} years old father with overall ${workSince()} years of work experience in diverse roles and fields. 
-Main focus areas were print-media (7 years) and telecommunications (9 years).
-Motivated learner, emphatic listener and keen observer. Just-do-it mentality.`)} 
+    ${salesForce} ${text(`enthusiast since 2012. 
+    Certified Admin, App Builder and Developer (PD1). 
+    Strongly interested in process efficiency, simplification and automation.`)}
 
-${salesForce} ${text(`enthusiast since 2012. 
-Certified Admin, App Builder and Developer (PD1). 
-Strongly interested in process efficiency, simplification and automation.`)}
+    ${linkedIn}  ${link(`https://www.linkedin.com/in/heikokraemer/`)}
+    ${gitHub}    ${link(`https://github.com/HeikoKramer`)}
+    ${trailHead} ${link(`https://trailblazer.me/id/hkrmer`)}
 
-${linkedIn}  ${link(`https://www.linkedin.com/in/heikokraemer/`)}
-${gitHub}    ${link(`https://github.com/HeikoKramer`)}
-${trailHead} ${link(`https://trailblazer.me/id/hkrmer`)}
-
-`);
+    `);
 })();
