@@ -6,6 +6,9 @@ const alert       = require('./alerts');
 const init        = require('./utils/init');
 const handleError = require('cli-handle-error');
 
+// Arguments
+const args = process.argv.slice(2);
+
 // Aliases
 const log = console.log;
 
@@ -23,13 +26,20 @@ const salesForce = chalk.white.bold.bgHex('#00A1E0')('sales')
 const trailHead  = chalk.bgWhite.hex('#032E61')('TRAILHEAD');
 const gitHub     = chalk.bgWhite.black.bold('GitHub');
 
+// Social Infos (excludable with flag --no-social)
+const socialInfo = `
+${linkedIn}  ${link(`https://www.linkedin.com/in/heikokraemer/`)}
+${gitHub}    ${link(`https://github.com/HeikoKramer`)}
+${trailHead} ${link(`https://trailblazer.me/id/hkrmer`)}
+`;
+
+const printSocial = args.indexOf('--no-social') === -1;
+const social = printSocial ? socialInfo : '';
+
 ( async () => {
 
     init(); 
     const { myAge, workSince } = require('./calctime');
-
-    // const err = new Error('Something went wrong');
-    // handleError('CUSTOM ERROR', err);
 
     log(`
     ${header('Heiko Krämer')}
@@ -42,9 +52,9 @@ const gitHub     = chalk.bgWhite.black.bold('GitHub');
     Certified Admin, App Builder and Developer (PD1). 
     Strongly interested in process efficiency, simplification and automation.`)}
 
-    ${linkedIn}  ${link(`https://www.linkedin.com/in/heikokraemer/`)}
-    ${gitHub}    ${link(`https://github.com/HeikoKramer`)}
-    ${trailHead} ${link(`https://trailblazer.me/id/hkrmer`)}
+    ${social}
 
     `);
+
+    alert({ type: 'info', msg: args, name: `ARGUMENTS` });
 })();
