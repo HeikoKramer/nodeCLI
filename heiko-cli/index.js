@@ -8,6 +8,9 @@ const handleError = require('cli-handle-error');
 const data        = require('./utils/data');
 
 const helpTest = `RUN npx heiko`;
+
+// Flags
+// add --no- to a flag to set it false (meow functionality)
 const options  = {
     flags: {
         social: {
@@ -20,17 +23,22 @@ const options  = {
         }
     }
 };
+
 const cli = meow(helpTest, options);
 
 (async () => {
     init(); 
 
     console.log(data.bio);
-    console.log(data.social)
+    if (cli.flags.social) {
+        console.log(data.social)
+    }
 
-    alert({ type: 'info', msg: data.disclaimer, name: 'DISCLAIMER' });
-
-
+    
+    if (cli.flags.disclaimer) {
+        alert({ type: 'info', msg: data.disclaimer, name: 'DISCLAIMER' });
+    }
+    
     alert({ type: 'info', msg: 'CLI DATA ↓' });
     console.log('cli.input', cli.input);
     console.log('cli.flags', cli.flags);
