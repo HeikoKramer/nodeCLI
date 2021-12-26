@@ -14,6 +14,7 @@ const flags = cli.flags;
 
 (async () => {
     init(); 
+    input.includes('help') && cli.showHelp(0);
 
     if (flags.disclaimer) {
         alert({ type: 'warning', msg: data.disclaimer, name: 'DISCLAIMER' });
