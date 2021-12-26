@@ -1,22 +1,34 @@
-const meow = require('meow');
+const meow  = require('meow');
+const chalk = require('chalk');
+
+const bold  = chalk.bold;
+const blue  = chalk.blue;
+const green = chalk.green;
+const yel   = chalk.yellow;
 
 // Help text
 // will print with package.json description on --help flag (meow functionality)
 const helpTest = `
-    Usage:
-        npx heiko [OPTIONS]
+    ${bold('Usage:')}
+        ${yel('npx heiko')} ${green('[OPTION]')} ${blue('<COMMAND>')}
 
-    Options:
-        s, social         Show social information (default: true)
-        --no-social       Hide social information
-        dis, disclaimer   Show disclaimer (default: true)
-        --no-disclaimer   Hide disclaimer
-        d, debug          Show CLI debug information
-
-    Example:
-        npx heiko --no-social
-        npx heiko --no-dis
-        npx heiko -d
+    ${bold('Options:')}
+        ${green(`-s, --social         Print social information (default: true)
+        --no-social          Hide social information
+        -dis, --disclaimer   Print disclaimer (default: true)
+        --no-disclaimer      Hide disclaimer
+        -d, --debug          Print CLI debug information
+        -v, --version        Print current package version
+        -h, --help           Print help page
+        `)}
+    ${bold('Commands:')}
+        ${blue(`help                 Print help page
+        `)}
+    ${bold('Usage:')}
+        ${yel('npx heiko')} ${green('--no-social')}
+        ${yel('npx heiko')} ${green('--no-dis')}
+        ${yel('npx heiko')} ${green('-d')}
+        ${yel('npx heiko')} ${blue('help')}
 `;
 
 // Flags
