@@ -34,7 +34,7 @@ ${gitHub}    ${link(`https://github.com/HeikoKramer`)}
 ${trailHead} ${link(`https://trailblazer.me/id/hkrmer`)}
 `;
 
-const disclaimer = `This cli is still under construction!`;
+const disclaimer = `This CLI is still under construction!`;
 
 module.exports = {
     bio,
