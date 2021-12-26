@@ -13,14 +13,17 @@ const flags = cli.flags;
 
 
 (async () => {
-    init(); 
+    init(flags.minimal); 
     input.includes('help') && cli.showHelp(0);
 
     if (flags.disclaimer) {
         alert({ type: 'warning', msg: data.disclaimer, name: 'DISCLAIMER' });
     }
 
-    console.log(data.bio);
+    if (flags.bio) {
+        console.log(data.bio);
+    }
+    
     if (flags.social) {
         console.log(data.social)
     }

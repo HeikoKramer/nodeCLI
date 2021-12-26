@@ -13,10 +13,13 @@ const helpTest = `
         ${yel('npx heiko')} ${green('[OPTION]')} ${blue('<COMMAND>')}
 
     ${bold('Options:')}
-        ${green(`-s, --social         Print social information (default: true)
+        ${green(`-b, --bio            Print biographic information (default: true)
+        --no-bio             Hide biographic information
+        -s, --social         Print social information (default: true) 
         --no-social          Hide social information
         -dis, --disclaimer   Print disclaimer (default: true)
         --no-disclaimer      Hide disclaimer
+        -m, --minimal        Print minimal information
         -d, --debug          Print CLI debug information
         -v, --version        Print current package version
         -h, --help           Print help page
@@ -34,11 +37,21 @@ const helpTest = `
 // Flags
 // add --no- to a flag to set it false (meow functionality)
 const options  = {
+    hardRejection: false,
     flags: {
+        bio: {
+            type: 'boolean',
+            default: true,
+            alias: 'b'
+        },
         social: {
             type: 'boolean',
             default: true,
             alias: 's'
+        },
+        minimal: {
+            type: 'boolean',
+            alias: 'm'
         },
         disclaimer: {
             type: 'boolean',
@@ -47,17 +60,14 @@ const options  = {
         },
         debug: {
             type: 'boolean',
-            default: false,
             alias: 'd'
         },
         version: {
             type: 'boolean',
-            default: false,
             alias: 'v'
         },
         help: {
             type: 'boolean',
-            default: false,
             alias: 'h'
         }
     }
