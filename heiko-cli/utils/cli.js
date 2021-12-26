@@ -37,6 +37,16 @@ const options  = {
             type: 'boolean',
             default: false,
             alias: 'd'
+        },
+        version: {
+            type: 'boolean',
+            default: false,
+            alias: 'v'
+        },
+        help: {
+            type: 'boolean',
+            default: false,
+            alias: 'h'
         }
     }
 };
