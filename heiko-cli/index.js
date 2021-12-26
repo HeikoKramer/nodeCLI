@@ -25,6 +25,6 @@ const flags = cli.flags;
     }
 
     // debug info if needed
-    debug(flags.debug, input, flags);
+    debug(flags.debug, cli);
     
 })();

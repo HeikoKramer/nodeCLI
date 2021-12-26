@@ -7,14 +7,16 @@ const helpTest = `
         npx heiko [OPTIONS]
 
     Options:
-        social           Show social information (default: true)
-        --no-social      Hide social information
-        disclaimer       Show disclaimer (default: true)
-        --no-disclaimer  Hide disclaimer
+        s, social         Show social information (default: true)
+        --no-social       Hide social information
+        dis, disclaimer   Show disclaimer (default: true)
+        --no-disclaimer   Hide disclaimer
+        d, debug          Show CLI debug information
 
     Example:
         npx heiko --no-social
-        npx heiko --no-disclaimer
+        npx heiko --no-dis
+        npx heiko -d
 `;
 
 // Flags
@@ -24,14 +26,17 @@ const options  = {
         social: {
             type: 'boolean',
             default: true,
+            alias: 's'
         },
         disclaimer: {
             type: 'boolean',
             default: true,
+            alias: 'dis'
         },
         debug: {
             type: 'boolean',
             default: false,
+            alias: 'd'
         }
     }
 };

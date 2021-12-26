@@ -1,12 +1,12 @@
 const alert = require('../alerts');
 
-module.exports = (isDebug, input, flags) => {
+module.exports = (isDebug, cli) => {
 
     if (!isDebug) {
         return;
     }
 
     alert({ type: 'info', msg: '↓ CLI DEBUG INFORMATION ↓' });
-    console.log('input', input);
-    console.log('flags', flags);
+    console.log('input', cli.input);
+    console.log('flags', cli.flags);
 }
