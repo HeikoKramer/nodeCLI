@@ -7,6 +7,7 @@ const handleError = require('cli-handle-error');
 const data        = require('./utils/data');
 const cli         = require('./utils/cli');
 const debug       = require('./utils/debug');
+const stats       = require('./utils/stats');
 
 const input = cli.input;
 const flags = cli.flags;
@@ -27,6 +28,10 @@ const flags = cli.flags;
     if (flags.social) {
         console.log(data.social)
     }
+
+    // Stats
+    await stats(flags.debug);
+
 
     // debug info if needed
     debug(flags.debug, cli);
