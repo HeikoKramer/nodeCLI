@@ -13,7 +13,7 @@ const flags = cli.flags;
 
 
 (async () => {
-    init(flags.minimal); 
+    init(flags.minimal, flags.clear); 
     input.includes('help') && cli.showHelp(0);
 
     if (flags.disclaimer) {

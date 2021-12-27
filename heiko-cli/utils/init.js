@@ -4,7 +4,7 @@ const welcome   = require('cli-welcome');
 const pkgJSON   = require('../package.json');
 
 
-module.exports = (minimal) => {
+module.exports = (minimal, clear) => {
     unhandled();
     
     // Add a CLI Welcome
@@ -15,7 +15,7 @@ module.exports = (minimal) => {
             bgColor: `#6d1f56`,
             color: `#ffffff`,
             bold: true,
-            clear: true,
+            clear,
             version: `${pkgJSON.version}`
         });
     }

@@ -23,6 +23,8 @@ const helpTest = `
         -d, --debug          Print CLI debug information
         -v, --version        Print current package version
         -h, --help           Print help page
+        -c, --clear          Clear the console (default: true)
+        --no-clear           Don't clear the console
         `)}
     ${bold('Commands:')}
         ${blue(`help                 Print help page
@@ -39,6 +41,11 @@ const helpTest = `
 const options  = {
     hardRejection: false,
     flags: {
+        clear: {
+            type: 'boolean',
+            default: true,
+            alias: 'c'
+        },
         bio: {
             type: 'boolean',
             default: true,
