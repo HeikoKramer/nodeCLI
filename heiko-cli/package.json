@@ -1,6 +1,6 @@
 {
     "name": "heiko-cli",
-    "version": "1.20.0",
+    "version": "1.21.0",
     "description": "Get to know Heiko via the CLI",
     "bin": {
         "heiko": "index.js"
@@ -14,7 +14,8 @@
         "cli-handle-unhandled": "^1.1.1",
         "cli-welcome": "2.2.2",
         "log-symbols": "4.1.0",
-        "meow": "8.0.0"
+        "meow": "8.0.0",
+        "ora": "5.4.1"
     },
     "keywords": [
         "heiko krämer",
