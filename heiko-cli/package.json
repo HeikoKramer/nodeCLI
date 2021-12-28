@@ -1,6 +1,6 @@
 {
     "name": "heiko-cli",
-    "version": "1.21.0",
+    "version": "1.21.1",
     "description": "Get to know Heiko via the CLI",
     "bin": {
         "heiko": "index.js"
