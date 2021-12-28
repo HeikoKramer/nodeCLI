@@ -26,6 +26,8 @@ const helpTest = `
         ${green(`-h, --help`)}           Print help page
         ${green(`-c, --clear`)}          Clear the console ${grit(`(default: true)`)}
         ${green(`--no-clear`)}           Don't clear the console
+        ${green(`-g, --greeting`)}       Enter your name for a personal greeting ${grit(`(default: true)`)}
+        ${green(`--no-greeting`)}        Start CLI without personal greeting
         
     ${bold('Commands:')}
         ${blue(`help`)}                 Print help page
@@ -46,6 +48,11 @@ const options  = {
             type: 'boolean',
             default: true,
             alias: 'c'
+        },
+        greeting: {
+            type: 'boolean',
+            default: true,
+            alias: 'g'
         },
         bio: {
             type: 'boolean',
