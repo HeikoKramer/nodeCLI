@@ -1,0 +1,7 @@
+{
+  "name": "@heiko.kramer/dir",
+  "version": "0.0.1",
+  "bin": {
+    "dir": "index.js"
+  }
+}
