@@ -1,91 +1,102 @@
-const meow  = require('meow');
-const chalk = require('chalk');
+const meow      = require('meow');
+const meowHelp  = require('cli-meow-help');
+const pkgJSON   = require('../package.json');
 
-const bold  = chalk.bold;
-const blue  = chalk.blue;
-const green = chalk.green;
-const yel   = chalk.yellow;
-const grit  = chalk.grey.italic; 
+const commands = {
+    help: {
+        desc: `Print help page`
+    }
+    };
 
-// Help text
-// will print with package.json description on --help flag (meow functionality)
-const helpTest = `
-    ${bold('Usage:')}
-        ${yel('npx heiko')} ${green('[OPTION]')} ${blue('<COMMAND>')}
-
-    ${bold('Options:')}
-        ${green(`-b, --bio`)}            Print biographic information ${grit(`(default: true)`)}
-        ${green(`--no-bio`)}             Hide biographic information
-        ${green(`-s, --social`)}         Print social information ${grit(`(default: true)`)} 
-        ${green(`--no-social`)}          Hide social information
-        ${green(`-dis, --disclaimer`)}   Print disclaimer ${grit(`(default: true)`)}
-        ${green(`--no-disclaimer`)}      Hide disclaimer
-        ${green(`-m, --minimal`)}        Print minimal information
-        ${green(`-d, --debug`)}          Print CLI debug information
-        ${green(`-v, --version`)}        Print current package version
-        ${green(`-h, --help`)}           Print help page
-        ${green(`-c, --clear`)}          Clear the console ${grit(`(default: true)`)}
-        ${green(`--no-clear`)}           Don't clear the console
-        ${green(`-g, --greeting`)}       Enter your name for a personal greeting ${grit(`(default: true)`)}
-        ${green(`--no-greeting`)}        Start CLI without personal greeting
-        
-    ${bold('Commands:')}
-        ${blue(`help`)}                 Print help page
-        
-    ${bold('Usage:')}
-        ${yel('npx heiko')} ${green('--no-social')}
-        ${yel('npx heiko')} ${green('--no-dis')}
-        ${yel('npx heiko')} ${green('-d')}
-        ${yel('npx heiko')} ${blue('help')}
-`;
-
-// Flags
-// add --no- to a flag to set it false (meow functionality)
-const options  = {
-    hardRejection: false,
-    flags: {
-        clear: {
-            type: 'boolean',
-            default: true,
-            alias: 'c'
-        },
-        greeting: {
-            type: 'boolean',
-            default: true,
-            alias: 'g'
-        },
-        bio: {
-            type: 'boolean',
-            default: true,
-            alias: 'b'
-        },
-        social: {
-            type: 'boolean',
-            default: true,
-            alias: 's'
-        },
-        minimal: {
-            type: 'boolean',
-            alias: 'm'
-        },
-        disclaimer: {
-            type: 'boolean',
-            default: true,
-            alias: 'dis'
-        },
-        debug: {
-            type: 'boolean',
-            alias: 'd'
-        },
-        version: {
-            type: 'boolean',
-            alias: 'v'
-        },
-        help: {
-            type: 'boolean',
-            alias: 'h'
-        }
+const flags = {
+    bio: {
+        type: 'boolean',
+        default: true,
+        alias: 'b',
+        desc: `Print biographic information`
+    },
+    'no-bio': {
+        type: 'boolean',
+        default: false,
+        desc: `Hide biographic information`
+    },
+    clear: {
+        type: 'boolean',
+        default: true,
+        alias: 'c',
+        desc: `Clear the console when starting CLI`
+    },
+    'no-clear': {
+        type: 'boolean',
+        default: false,
+        desc: `Don't clear the console when starting CLI`
+    },
+    debug: {
+        type: 'boolean',
+        alias: 'd',
+        desc: `Print CLI debug information`
+    },
+    disclaimer: {
+        type: 'boolean',
+        default: true,
+        alias: 'dis',
+        desc: `Print disclaimer`
+    },
+    'no-disclaimer': {
+        type: 'boolean',
+        default: false,
+        desc: `Hide disclaimer`
+    },
+    greeting: {
+        type: 'boolean',
+        default: false,
+        alias: 'g',
+        desc: `Enter your name for a personal greeting`
+    },
+    help: {
+        type: 'boolean',
+        alias: 'h',
+        desc: `Print help page`
+    },
+    minimal: {
+        type: 'boolean',
+        alias: 'm',
+        desc: `Print information in minimal format`
+    },
+    social: {
+        type: 'boolean',
+        default: true,
+        alias: 's',
+        desc: `Print social information`
+    },
+    'no-social': {
+        type: 'boolean',
+        default: false,
+        desc: `Hide social information`
+    },
+    version: {
+        type: 'boolean',
+        alias: 'v',
+        desc: `Print current package version`
     }
 };
 
-module.exports = meow(helpTest, options);
+
+// Help text, generated with cli-meow-help
+const helpText = meowHelp({
+    name: `npx heiko-cli`,
+    flags,
+    commands,
+    desc: `HELP page for ${pkgJSON.name} v${pkgJSON.version}\n– ${pkgJSON.description}`
+});
+
+
+// add --no- to a flag to set it false (meow functionality)
+const options  = {
+    hardRejection: false,
+    description: false,
+    flags
+};
+
+
+module.exports = meow(helpText, options);
