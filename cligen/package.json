@@ -1,0 +1,11 @@
+{
+    "name": "cligen",
+    "version": "0.0.0",
+    "description": "command line application to generate CLI boilerplates",
+    "bin": {
+        "cligen": "index.js"
+    },
+    "dependencies": {
+        "copy-template-dir": "^1.4.0"
+    }
+}
