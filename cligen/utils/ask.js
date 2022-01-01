@@ -3,14 +3,21 @@ const to          = require('await-to-js').default;
 const handleError = require('cli-handle-error');
 
 module.exports = async ({ message, hint, initial }) => {
-  const [err, response] = await to(
-    new Input({
-      message,
-      hint,
-      initial
-    }).run()
-  );
-  handleError(`INPUT`, err);
+    const [err, response] = await to(
+        new Input({
+            message,
+            hint,
+            initial,
+            validate(value) {
+                return !value ? `Please add a value` : true;
+            }
+        })
+        .on('cancel', () => { 
+            console.log(`┌( ಠ_ಠ)┘ process aborted!`);
+            process.exit(1) })
+            .run()
+    );
+    handleError(`INPUT`, err);
 
-  return response;
+    return response;
 };
