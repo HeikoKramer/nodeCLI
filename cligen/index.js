@@ -3,8 +3,9 @@ const path  = require('path');
 const copy  = require('copy-template-dir');
 const chalk = require('chalk');
 
-const init = require('./utils/init');
-const ask  = require('./utils/ask');
+const init      = require('./utils/init');
+const cli       = require('./utils/cli');
+const questions = require('./utils/questions');
 
 // colors
 const b  = chalk.bold;
@@ -15,56 +16,16 @@ const w  = chalk.white;
 const bw = chalk.bold.white;
 const d  = chalk.dim;
 
+const input = cli.input;
+const flags = cli.flags;
+const { clear } = flags;
+
 (async() => {
-  init();
+  init(clear);
+  input.includes(`help`) && cli.showHelp(0);
 
-  const name = await ask({ 
-    message: `please enter CLI name`,
-    hint: `(camel case only)`,
-  });
-
-  const command = await ask({ 
-    message: `please enter CLI command`,
-    hint: `(optional)`,
-  });
-
-  const description = await ask({ 
-    message: `please enter description`  
-  });
-
-  const version = await ask({ 
-    message: `please enter initial version`,
-    initial: `0.0.0`  
-  });
-
-  const license = await ask({ 
-    message: `please the license`,
-    initial: `UNLICENSED`  
-  });
-
-  const authorName = await ask({ 
-    message: `please enter the author's name`  
-  });
-
-  const authorEmail = await ask({ 
-    message: `please enter the author's email address`  
-  });
-
-  const authorUrl = await ask({ 
-    message: `please enter the author's website`  
-  });
-
-  const vars = { 
-    name,
-    command: command ? command : name,
-    description,
-    version,
-    license,
-    authorName,
-    authorEmail,
-    authorUrl
-    };
   
+  const vars   = await questions();
   const outDir = vars.name;
   const inDirPath  = path.join(__dirname, `template`);
   const outDirPath = path.join(process.cwd(), outDir);

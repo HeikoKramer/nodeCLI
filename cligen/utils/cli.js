@@ -1,5 +1,6 @@
 const meow     = require('meow');
 const meowHelp = require('cli-meow-help');
+const pkgJSON  = require('../package.json');
 
 const flags = {
     clear: {
@@ -32,7 +33,7 @@ const commands = {
 }
 
 const helpText = meowHelp({
-    name: `{{command}}`,
+    name: `${pkgJSON.name}`,
     flags,
     commands,
 });
