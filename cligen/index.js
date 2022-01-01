@@ -21,8 +21,6 @@ const ask         = require('./utils/ask');
     initial: `0.0.0`  
   });
 
-  // if (version === '') { version = `0.0.0`}; 
-
   const vars = { 
     name,
     description,

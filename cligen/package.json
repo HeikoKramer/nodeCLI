@@ -1,6 +1,6 @@
 {
     "name": "cligen",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "description": "command line application to generate CLI boilerplates",
     "bin": {
         "cligen": "index.js"
