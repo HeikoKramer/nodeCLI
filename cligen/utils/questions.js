@@ -1,39 +1,47 @@
 const ask  = require('./ask');
 
 module.exports = async () => {
-    const name = await ask({ 
+    const name = await ask({
+        name: `name`, 
         message: `please enter CLI name`,
         hint: `(camel case only)`,
     });
     
-    const command = await ask({ 
+    const command = await ask({
+        name: `command`, 
         message: `please enter CLI command`,
         hint: `(optional)`,
       });
     
-    const description = await ask({ 
+    const description = await ask({
+        name: `description`, 
         message: `please enter description`  
     });
     
-    const version = await ask({ 
+    const version = await ask({
+        name: `version`, 
         message: `please enter initial version`,
         initial: `0.0.0`  
     });
     
-    const license = await ask({ 
+    const license = await ask({
+        name: `license`, 
         message: `please the license`,
         initial: `UNLICENSED`  
     });
     
-    const authorName = await ask({ 
+    const authorName = await ask({
+        name: `authorName`, 
         message: `please enter the author's name`  
     });
     
-    const authorEmail = await ask({ 
+    const authorEmail = await ask({
+        name: `authorEmail`, 
         message: `please enter the author's email address`  
     });
     
-    const authorUrl = await ask({ 
+    const authorUrl = await ask({
+        name: `authorUrl`, 
         message: `please enter the author's website`  
     });
     
@@ -47,5 +55,6 @@ module.exports = async () => {
         authorEmail,
         authorUrl
     };
+
     return vars;
 };
