@@ -16,16 +16,37 @@ const ask         = require('./utils/ask');
     message: `please enter description`  
   });
 
-  let version = await ask({ 
+  const version = await ask({ 
     message: `please enter initial version`,
     initial: `0.0.0`  
+  });
+
+  const license = await ask({ 
+    message: `please the license`,
+    initial: `UNLICENSED`  
+  });
+
+  const authorName = await ask({ 
+    message: `please enter the author's name`  
+  });
+
+  const authorEmail = await ask({ 
+    message: `please enter the author's email address`  
+  });
+
+  const authorUrl = await ask({ 
+    message: `please enter the author's website`  
   });
 
   const vars = { 
     name,
     description,
-    version
-  };
+    version,
+    license,
+    authorName,
+    authorEmail,
+    authorUrl
+    };
   
   const inDir  = path.join(__dirname, `template`);
   const outDir = path.join(process.cwd(), vars.name);
