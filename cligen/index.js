@@ -23,6 +23,11 @@ const d  = chalk.dim;
     hint: `(camel case only)`,
   });
 
+  const command = await ask({ 
+    message: `please enter CLI command`,
+    hint: `(optional)`,
+  });
+
   const description = await ask({ 
     message: `please enter description`  
   });
@@ -51,6 +56,7 @@ const d  = chalk.dim;
 
   const vars = { 
     name,
+    command: command ? command : name,
     description,
     version,
     license,
