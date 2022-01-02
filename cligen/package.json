@@ -1,20 +1,22 @@
 {
     "name": "cligen",
-    "version": "1.4.0",
+    "version": "1.5.0",
     "description": "command line application to generate CLI boilerplates",
     "bin": {
         "cligen": "index.js"
     },
     "dependencies": {
-        "await-to-js": "^3.0.0",
+        "await-to-js": "3.0.0",
         "chalk": "4.1.2",
-        "cli-alerts": "^1.2.2",
-        "cli-handle-error": "^4.4.0",
-        "cli-handle-unhandled": "^1.1.1",
-        "cli-meow-help": "^2.0.2",
-        "cli-welcome": "^2.2.2",
-        "copy-template-dir": "^1.4.0",
-        "enquirer": "^2.3.6",
-        "meow": "8.0.0"
+        "cli-alerts": "1.2.2",
+        "cli-handle-error": "4.4.0",
+        "cli-handle-unhandled": "1.1.1",
+        "cli-meow-help": "2.0.2",
+        "cli-welcome": "2.2.2",
+        "copy-template-dir": "1.4.0",
+        "enquirer": "2.3.6",
+        "execa": "5.1.1",
+        "meow": "8.0.0",
+        "ora": "5.4.1"
     }
 }
