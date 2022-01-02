@@ -34,7 +34,7 @@ module.exports = async () => {
         });
 
         console.log();
-        spinner.start(`${yb(`DEPENDENSCIES`)} ${w(`installing …`)}`);
+        spinner.start(`${yb(`DEPENDENCIES`)} ${w(`installing …`)}`);
         process.chdir(outDirPath);
 
         const pkgs = [
@@ -50,7 +50,7 @@ module.exports = async () => {
         await execa(`npm`, [`install`, ...pkgs]);
         await execa(`npm`, [`dedupe`]);
 
-        spinner.succeed(`${gb(`DEPENDENSCIES`)} ${w(`installed!`)}`);
+        spinner.succeed(`${gb(`DEPENDENCIES`)} ${w(`installed!`)}`);
   
         console.log(gb(`\n✔ SUCCESS`), w(`new project`), g(`${outDir}`), w(`has been created!\n`));
       });
