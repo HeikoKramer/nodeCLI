@@ -38,16 +38,16 @@ module.exports = async () => {
         process.chdir(outDirPath);
 
         const pkgs = [
-            `meow`,
-            `chalk`,
-            `cli-alerts`,
-            `cli-welcome`,
-            `cli-meow-help`,
-            `cli-handle-error`,
-            `cli-handle-unhandled`
+            `meow@8.0.0`,
+            `chalk@4.1.2`,
+            `cli-alerts@1.2.2`,
+            `cli-welcome@2.2.2`,
+            `cli-meow-help@2.0.2`,
+            `cli-handle-error@4.4.0`,
+            `cli-handle-unhandled@1.1.1`
         ];
 
-        await execa(`npm`, [`install`, ...pkgs]);
+        await execa(`npm`, [`install`, ...pkgs, `-E`]);
         await execa(`npm`, [`dedupe`]);
 
         spinner.succeed(`${gb(`DEPENDENCIES`)} ${w(`installed!`)}`);
