@@ -1,7 +1,7 @@
 {
     "name": "cli-todo",
     "description": "CLI to manage todos",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "license": "UNLICENSED",
     "bin": {
         "cli-todo": "index.js",
@@ -19,6 +19,7 @@
         "cli-handle-unhandled": "1.1.1",
         "cli-meow-help": "2.0.2",
         "cli-welcome": "2.2.2",
+        "make-dir": "3.1.0",
         "meow": "8.0.0"
     }
 }
