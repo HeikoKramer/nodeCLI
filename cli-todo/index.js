@@ -12,6 +12,8 @@ const fs      = require('fs');
 const makeDir = require('make-dir');
 
 // Database
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
 const dbTodos = path.join(process.cwd(), `.todo/todos.json`);
 
 const init = require('./utils/init');
@@ -31,6 +33,10 @@ const { clear, debug } = flags;
         process.chdir(`.todo`);
         fs.writeFileSync(`todos.json`, `{}`);
     }
+
+    const adapter = new FileSync(dbTodos);
+    const db = low(adapter);
+    db.defaults({ todos: [] }).write();
 
     debug && log(flags);
 })();
