@@ -38,5 +38,11 @@ const { clear, debug } = flags;
     const db = low(adapter);
     db.defaults({ todos: [] }).write();
 
+    // Command lodo view / ls
+    if (input.includes(`view`) || input.includes(`ls`)) {
+        const allTodos = db.get(`todos`).value();
+        console.log(allTodos);
+    }
+
     debug && log(flags);
 })();
