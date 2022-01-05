@@ -48,7 +48,7 @@ const { clear, debug } = flags;
     // Command: todo add
     if (input.includes(`add`)) {
         const whatTodo = await ask({ message: `Add a todo` });
-        console.log('whatTodo: ', whatTodo); 
+        db.get(`todos`).push({ title: whatTodo }).write(); 
     }
 
     debug && log(flags);
