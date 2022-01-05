@@ -1,7 +1,7 @@
 {
     "name": "cli-todo",
     "description": "CLI to manage todos",
-    "version": "0.2.1",
+    "version": "0.3.0",
     "license": "UNLICENSED",
     "bin": {
         "cli-todo": "index.js",
@@ -13,12 +13,15 @@
         "url": "https://heikokraemer.de"
     },
     "dependencies": {
+        "await-to-js": "^3.0.0",
         "chalk": "4.1.2",
         "cli-alerts": "1.2.2",
-        "cli-handle-error": "4.4.0",
+        "cli-handle-error": "^4.4.0",
         "cli-handle-unhandled": "1.1.1",
         "cli-meow-help": "2.0.2",
+        "cli-should-cancel": "^1.0.3",
         "cli-welcome": "2.2.2",
+        "enquirer": "^2.3.6",
         "lowdb": "1.0.0",
         "make-dir": "3.1.0",
         "meow": "8.0.0"

@@ -19,6 +19,7 @@ const dbTodos = path.join(process.cwd(), `.todo/todos.json`);
 const init = require('./utils/init');
 const cli  = require('./utils/cli');
 const log  = require('./utils/log');
+const ask  = require('./utils/ask');
 
 const input = cli.input;
 const flags = cli.flags;
@@ -38,10 +39,16 @@ const { clear, debug } = flags;
     const db = low(adapter);
     db.defaults({ todos: [] }).write();
 
-    // Command lodo view / ls
+    // Command: todo view / ls
     if (input.includes(`view`) || input.includes(`ls`)) {
         const allTodos = db.get(`todos`).value();
         console.log(allTodos);
+    }
+
+    // Command: todo add
+    if (input.includes(`add`)) {
+        const whatTodo = await ask({ message: `Add a todo` });
+        console.log('whatTodo: ', whatTodo); 
     }
 
     debug && log(flags);
