@@ -10,6 +10,8 @@
 const path    = require('path');
 const fs      = require('fs');
 const makeDir = require('make-dir');
+const alert   = require('cli-alerts');
+const { green : g, red : r, yellow : y } = require('chalk');
 
 // Database
 const low = require('lowdb');
@@ -49,6 +51,11 @@ const { clear, debug } = flags;
     if (input.includes(`add`)) {
         const whatTodo = await ask({ message: `Add a todo` });
         db.get(`todos`).push({ title: whatTodo }).write(); 
+        alert({
+            type: `success`,
+            name: `ADDED`,
+            msg: `successfully`
+        });
     }
 
     debug && log(flags);
