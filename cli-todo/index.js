@@ -11,7 +11,7 @@ const path    = require('path');
 const fs      = require('fs');
 const makeDir = require('make-dir');
 const alert   = require('cli-alerts');
-const { green : g, red : r, yellow : y } = require('chalk');
+const { green : g, red : r, yellow : y, dim : d } = require('chalk');
 
 // Database
 const low = require('lowdb');
@@ -44,7 +44,8 @@ const { clear, debug } = flags;
     // Command: todo view / ls
     if (input.includes(`view`) || input.includes(`ls`)) {
         const allTodos = db.get(`todos`).value();
-        console.log(allTodos);
+        allTodos.map((todo, i) => console.log(`${d(`${++i}:`)} ${g(`${todo.title}`)}`));
+        console.log(`\n${y(`TOTAL: ${allTodos.length}`)}\n`);
     }
 
     // Command: todo add
