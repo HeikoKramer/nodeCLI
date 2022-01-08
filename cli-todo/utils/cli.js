@@ -26,8 +26,17 @@ const flags = {
 };
 
 const commands = {
+    add: {
+        desc: `Add a new todo to list`
+    },
     help: {
         desc: `Print CLI help`
+    },
+    ls: {
+        desc: `List all todos`
+    },
+    del: {
+        desc: `Select and remove todos from list`
     }
 }
 
