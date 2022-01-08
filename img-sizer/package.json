@@ -1,0 +1,24 @@
+{
+    "name": "img-sizer",
+    "description": "CLI to resize images",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "bin": {
+        "img-sizer": "index.js",
+        "isi": "index.js"
+    },
+    "author": {
+        "name": "Heiko Krämer",
+        "email": "npm@heikokraemer.de",
+        "url": "https://heikokraemer.de"
+    },
+    "dependencies": {
+        "chalk": "4.1.2",
+        "cli-alerts": "1.2.2",
+        "cli-handle-error": "4.4.0",
+        "cli-handle-unhandled": "1.1.1",
+        "cli-meow-help": "2.0.2",
+        "cli-welcome": "2.2.2",
+        "meow": "8.0.0"
+    }
+}
