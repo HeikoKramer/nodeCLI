@@ -1,7 +1,7 @@
 {
     "name": "img-sizer",
     "description": "CLI to resize images",
-    "version": "0.0.0",
+    "version": "0.1.1",
     "license": "UNLICENSED",
     "bin": {
         "img-sizer": "index.js",
