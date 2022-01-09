@@ -1,7 +1,7 @@
 {
     "name": "img-sizer",
     "description": "CLI to resize images",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "license": "UNLICENSED",
     "bin": {
         "img-sizer": "index.js",
@@ -21,6 +21,7 @@
         "cli-welcome": "2.2.2",
         "globby": "11.0.4",
         "meow": "8.0.0",
+        "ora": "5.4.1",
         "resize-optimize-images": "^1.1.2"
     }
 }
